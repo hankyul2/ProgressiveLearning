@@ -1,0 +1,51 @@
+data:
+  dataset_name: "cifar10"
+  batch_size: 384
+  num_workers: 4
+  size:
+  - 128
+  - 128
+  data_root: data
+  valid_ratio: 0.1
+
+# 2. define model (define other backbone)
+model:
+  model_name: 'efficientnet_v2_s'
+  pl: true
+  augmentation: 'mixup'
+  model_args:
+    pretrained: true
+    dropout: 0.1
+
+
+# 3. prepare train tools (optimizer, learning rate scheduler)
+optimizer:
+  class_path: torch.optim.AdamW
+  init_args:
+    lr: 0.00229
+
+lr_scheduler:
+  class_path: torch.optim.lr_scheduler.OneCycleLR
+  init_args:
+    max_lr: 0.0 # don't change this
+    total_steps: 0
+
+# 4. train
+seed_everything: 2021
+trainer:
+  # 4-1. gpu devices
+  gpus: null
+  accelerator: ddp
+  amp_backend: native
+
+  # 4-2. train setting
+  max_epochs: 12
+  reload_dataloaders_every_n_epochs: true
+
+  # 4-3. logger & callbacks
+  log_every_n_steps: 50
+  callbacks:
+    - class_path: pytorch_lightning.callbacks.LearningRateMonitor
+
+  # 4-4. precision
+  precision: 16

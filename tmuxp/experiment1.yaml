@@ -1,0 +1,29 @@
+session_name: progressive_learning
+windows:
+  - window_name: cifar
+    shell_command_before:
+      - source ~/.zshrc
+    panes:
+      - shell_command:
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar10.yaml --trainer.gpus 2,4, --trainer.max_epochs 2 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar10.yaml --trainer.gpus 2,4, --trainer.max_epochs 4 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar10.yaml --trainer.gpus 2,4, --trainer.max_epochs 6 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar10.yaml --trainer.gpus 2,4, --trainer.max_epochs 8 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar10.yaml --trainer.gpus 2,4, --trainer.max_epochs 10 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar10.yaml --trainer.gpus 2,4, --trainer.max_epochs 12 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar10.yaml --trainer.gpus 2,4, --trainer.max_epochs 14 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar10.yaml --trainer.gpus 2,4, --trainer.max_epochs 16 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar10.yaml --trainer.gpus 2,4, --trainer.max_epochs 18 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar10.yaml --trainer.gpus 2,4, --trainer.max_epochs 20 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar10.yaml --trainer.gpus 2,4, --trainer.max_epochs 22 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar100.yaml --trainer.gpus 2,4, --trainer.max_epochs 2 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar100.yaml --trainer.gpus 2,4, --trainer.max_epochs 4 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar100.yaml --trainer.gpus 2,4, --trainer.max_epochs 6 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar100.yaml --trainer.gpus 2,4, --trainer.max_epochs 8 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar100.yaml --trainer.gpus 2,4, --trainer.max_epochs 10 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar100.yaml --trainer.gpus 2,4, --trainer.max_epochs 12 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar100.yaml --trainer.gpus 2,4, --trainer.max_epochs 14 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar100.yaml --trainer.gpus 2,4, --trainer.max_epochs 16 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar100.yaml --trainer.gpus 2,4, --trainer.max_epochs 18 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar100.yaml --trainer.gpus 2,4, --trainer.max_epochs 20 --seed_everything 2021
+          - python3 main.py fit --config configs/efficientnetv2_s_cifar100.yaml --trainer.gpus 2,4, --trainer.max_epochs 22 --seed_everything 2021

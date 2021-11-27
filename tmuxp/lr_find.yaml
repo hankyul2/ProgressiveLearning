@@ -1,0 +1,8 @@
+session_name: progressive_learning
+windows:
+  - window_name: cifar10
+    shell_command_before:
+      - source ~/.zshrc
+    panes:
+      - shell_command:
+          - python3 main.py tune --config configs/efficientnetv2_s_cifar10.yaml --trainer.gpus 2, --seed_everything 2021 --trainer.auto_lr_find true --trainer.accelerator null
